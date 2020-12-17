@@ -73,8 +73,10 @@ namespace iText.IO.Font {
         static FontCache() {
             try {
                 LoadRegistry();
-                foreach (String font in registryNames.Get(FONTS_PROP)) {
-                    allCidFonts.Put(font, ReadFontProperties(font));
+                if (registryNames.Count > 0) {
+                    foreach (String font in registryNames.Get(FONTS_PROP)) {
+                        allCidFonts.Put(font, ReadFontProperties(font));
+                    }
                 }
             }
             catch (Exception) {

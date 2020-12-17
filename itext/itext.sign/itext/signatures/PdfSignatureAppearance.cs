@@ -495,7 +495,8 @@ namespace iText.Signatures {
                 String text;
                 if (layer2Text == null) {
                     StringBuilder buf = new StringBuilder();
-                    buf.Append("Digitally signed by ");
+                    //buf.Append("Digitally signed by ");
+                    buf.Append("Podpisane przez ");
                     String name = null;
                     CertificateInfo.X500Name x500name = CertificateInfo.GetSubjectFields((X509Certificate)signCertificate);
                     if (x500name != null) {
@@ -508,7 +509,7 @@ namespace iText.Signatures {
                         name = "";
                     }
                     buf.Append(name).Append('\n');
-                    buf.Append("Date: ").Append(SignUtils.DateToString(signDate));
+                    buf.Append("Data: ").Append(SignUtils.DateToString(signDate));
                     if (reason != null) {
                         buf.Append('\n').Append(reasonCaption).Append(reason);
                     }
