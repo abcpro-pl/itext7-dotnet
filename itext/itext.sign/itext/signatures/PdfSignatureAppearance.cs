@@ -496,7 +496,7 @@ namespace iText.Signatures {
                 if (layer2Text == null) {
                     StringBuilder buf = new StringBuilder();
                     //buf.Append("Digitally signed by ");
-                    buf.Append("Podpisane przez ");
+                    buf.Append("Podpisany przez ");
                     String name = null;
                     CertificateInfo.X500Name x500name = CertificateInfo.GetSubjectFields((X509Certificate)signCertificate);
                     if (x500name != null) {
